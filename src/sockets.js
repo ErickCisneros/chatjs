@@ -8,7 +8,7 @@ module.exports = function(io) {
     io.on('connection', async socket => {
         console.log('new user connected');
 
-        let messages = await Chat.find({}).limit(10);
+        let messages = await Chat.find({}).sort({created_at:1});
 
         socket.emit('load old msgs', messages);
 
