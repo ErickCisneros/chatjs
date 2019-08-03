@@ -10,7 +10,7 @@ const app = express(); //Este es el servidor
 const server = http.createServer(app);
 const io = socketio.listen(server);
 
-mongoose.connect('mongodb://localhost/chat-databse')
+mongoose.connect('mongodb+srv://erick:erick@chat-database-kjcnu.mongodb.net/test?retryWrites=true&w=majority')
 .then(db => console.log('db is connected'))
 .catch(err => console.log(err));
 
