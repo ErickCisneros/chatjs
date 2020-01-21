@@ -41,6 +41,9 @@ $(function (){
 
     socket.on('new message', function(data) {
         $chat.append('<b>'+ data.nick +'</b>: ' + data.msg + '<br/>');
+        setTimeout(() => {
+            $chat.animate({ scrollTop: $chat.scrollHeigth }, "slow");
+          }, 1000);
     });
 
     socket.on('usernames', data => {
@@ -57,7 +60,7 @@ $(function (){
 
     socket.on('load old msgs', msgs => {
         for(let i=0; i<msgs.length; i++) {
-            displayMsg(msgs[i])
+            displayMsg(msgs[i]);
         }
     });
 

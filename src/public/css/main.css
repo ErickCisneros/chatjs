@@ -8,6 +8,12 @@ body {
     display: none;
 }
 
+#chat {
+    overflow-y:scroll;
+    height: 50vh;
+    overflow: auto;
+}
+
 .error {
     color: red;
 }
